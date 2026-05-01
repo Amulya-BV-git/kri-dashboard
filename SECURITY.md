@@ -50,3 +50,75 @@ Improper system configuration exposes the application to vulnerabilities.
 - Use secure default configurations
 - Enable security headers
 - Regularly update dependencies
+
+## Additional Security Threats (Tool-Specific)
+
+## 1. Prompt Injection Attack
+
+### Attack Scenario:
+A user sends malicious input like "Ignore previous instructions" to manipulate AI output.
+
+### Damage Potential:
+- AI gives wrong or unsafe results
+- System behavior is altered
+
+### Mitigation:
+- Detect suspicious phrases
+- Block prompt injection patterns
+- Limit AI instructions
+
+## 2. AI Hallucination
+
+### Attack Scenario:
+AI generates incorrect or misleading information due to unclear input.
+
+### Damage Potential:
+- Wrong insights
+- Bad decision making
+
+### Mitigation:
+- Use structured prompts
+- Add confidence score
+- Use RAG (ChromaDB) for accuracy
+
+## 3. Invalid Input Handling
+
+### Attack Scenario:
+User sends empty or malformed data to API.
+
+### Damage Potential:
+- System crash
+- Unexpected errors
+
+### Mitigation:
+- Validate input before processing
+- Reject empty requests
+- Return proper error messages
+
+## 4. AI API Failure
+
+### Attack Scenario:
+AI service (Groq API) fails or times out.
+
+### Damage Potential:
+- System stops responding
+- Poor user experience
+
+### Mitigation:
+- Use try-except handling
+- Provide fallback responses
+- Set timeout limits
+
+## 5. Logging Sensitive Data
+
+### Attack Scenario:
+Sensitive information is stored in logs.
+
+### Damage Potential:
+- Data leakage
+- Security breach
+
+### Mitigation:
+- Avoid logging sensitive data
+- Mask confidential fields
+- Use secure logging
