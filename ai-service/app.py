@@ -3,16 +3,15 @@ from sanitizer import sanitize_input
 
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
+app = Flask(__name__)
 limiter = Limiter(
     get_remote_address,
     app=app,
     default_limits=["30 per minute"]
 )
-app = Flask(__name__)
 
 # Connect middleware
 app.before_request(sanitize_input)
-app=Flask(__name__)
 
 # Test API
 @app.route('/test', methods=['POST'])
@@ -31,6 +30,14 @@ def generate_report():
         "message": "Report generated successfully",
         "data": data
     })
+
+# Error handler
+@app.errorhandler(429)
+def rate_limit_exceeded(e):
+    return jsonify({
+        "error": "Too many requests",
+        "retry_after": str(e.description)
+    }), 429
 
 if __name__ == '__main__':
     app.run(debug=True)
