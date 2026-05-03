@@ -354,14 +354,32 @@ All required security controls are effective.
 - Medium: None / Minor
 - Low: Informational only
 
----
+
 
 ###  Outcome
 - All security headers enforced
 - No remaining Critical or High vulnerabilities
 
----
 
 ###  Conclusion
 Application security strengthened using Flask-Talisman.
 ZAP re-scan confirms zero Critical/High issues
+
+##  Day 13: Full Stack Security Testing
+
+###  Test Results
+
+- 401 Unauthorized:
+  API blocks access when no JWT token is provided
+
+- 403 Forbidden:
+  Not implemented in current project scope
+
+- XSS Test:
+  Input with script tags is handled safely (no execution)
+
+- Rate Limiting:
+  API returns 429 Too Many Requests after multiple requests
+
+###  Conclusion
+All implemented security features (JWT, sanitization, rate limiting) are working correctly.
