@@ -232,7 +232,7 @@ Recommended improvements:
 OWASP ZAP scan completed successfully.
 No vulnerabilities were detected in the current API structure.
 
-## ZAP Remediation
+## Day 8: ZAP Remediation
 
 ###  Previous Findings
 - Missing security headers were identified during the OWASP ZAP scan (Day 7)
@@ -256,3 +256,30 @@ No vulnerabilities were detected in the current API structure.
 Security headers were successfully implemented.
 OWASP ZAP re-scan confirms that no vulnerabilities are present.
 Application security has been improved.
+
+##  Day 9: PII Audit
+
+###  Audit Scope
+- Reviewed all API endpoints and input handling
+- Checked for storage, logging, and exposure of personal data
+
+---
+
+###  Findings
+- User input is received using request.get_json() in app.py and sanitizer.py
+- Input is processed temporarily and not stored in any files or databases
+- No logging of user input (no print or logger usage found)
+- API responses return input only for testing purposes and do not persist data
+
+---
+
+###  Security Measures
+- Input sanitization is implemented
+- No persistence of sensitive data
+- No exposure of confidential information
+
+---
+
+###  Conclusion
+The application does not process or store any Personally Identifiable Information (PII).
+No privacy risks were identified.
