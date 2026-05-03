@@ -231,3 +231,28 @@ Recommended improvements:
 
 OWASP ZAP scan completed successfully.
 No vulnerabilities were detected in the current API structure.
+
+## ZAP Remediation
+
+###  Previous Findings
+- Missing security headers were identified during the OWASP ZAP scan (Day 7)
+
+---
+
+###  Fixes Applied
+- Added X-Content-Type-Options: nosniff
+- Added X-Frame-Options: DENY
+
+---
+
+###  Re-scan Result
+- Re-scanned application using OWASP ZAP
+- No alerts found after re-scan
+- Previously identified header-related issues are resolved
+
+---
+
+### Conclusion
+Security headers were successfully implemented.
+OWASP ZAP re-scan confirms that no vulnerabilities are present.
+Application security has been improved.
