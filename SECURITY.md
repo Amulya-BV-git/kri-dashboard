@@ -154,3 +154,80 @@ All endpoints were tested against:
 
  The system successfully blocked malicious inputs  
  Rate limiting is functioning correctly
+
+ [7:31 pm, 03/05/2026] Amulya BV: ## 🛡️ OWASP ZAP Scan Results
+
+### 🔍 Target
+http://127.0.0.1:5000
+
+---
+
+###  Findings by Severity
+
+#### 🔴 High
+- None
+
+#### 🟠 Medium
+- None
+
+#### 🟡 Low
+- None
+
+####  Informational
+- No significant issues detected during scan
+
+---
+
+### Remediation Plan (Medium+)
+
+No Medium or High severity vulnerabilities were identified.
+
+Recommended improvements:
+- Add security headers (CSP, X-Frame-Options)
+- Continue periodic security testing
+- Expand endpoints for deeper testing
+
+---
+
+###  Conclusion
+
+OWASP ZAP scan completed successfully.
+No vulnerabilities were detected in the current API structure.
+[7:33 pm, 03/05/2026] Amulya BV: ## 🛡️ OWASP ZAP Scan Results
+
+### 🔍 Target
+http://127.0.0.1:5000
+
+---
+
+###  Findings by Severity
+
+#### 🔴 High
+- None
+
+#### 🟠 Medium
+- None
+
+#### 🟡 Low
+- None
+
+#### Informational
+- No significant issues detected during scan
+
+---
+
+### Remediation Plan (Medium+)
+
+No Medium or High severity vulnerabilities were identified.
+
+Recommended improvements:
+- Add security headers (CSP, X-Frame-Options)
+- Continue periodic security testing
+- Expand endpoints for deeper testing
+
+---
+
+### Conclusion
+
+OWASP ZAP scan completed successfully.
+No vulnerabilities were detected in the current API structure.

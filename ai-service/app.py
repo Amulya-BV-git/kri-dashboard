@@ -4,6 +4,14 @@ from sanitizer import sanitize_input
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 app = Flask(__name__)
+@app.route('/')
+def home():
+    return "API is running"
+
+@app.route('/health')
+def health():
+    return {"status": "ok"}
+
 limiter = Limiter(
     get_remote_address,
     app=app,
