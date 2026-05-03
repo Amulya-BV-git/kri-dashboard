@@ -284,7 +284,7 @@ Application security has been improved.
 The application does not process or store any Personally Identifiable Information (PII).
 No privacy risks were identified.
 
-##  Day 10: Week 2 Security Sign-Off
+##  Day 10: Week  Security Sign-Off
 
 ###  Security Controls Verification
 
@@ -307,3 +307,35 @@ No privacy risks were identified.
 All required security controls have been successfully implemented and verified.
 
 The application meets the required security standards for the current scope.
+
+##  Day 11: Full OWASP ZAP Active Scan
+
+###  Scan Details
+- Tool: OWASP ZAP
+- Scan Type: Active Scan
+- Target: http://127.0.0.1:5000
+
+---
+
+###  Findings
+
+####  Critical
+- None found → No action required
+
+####  High
+- None found → No action required
+
+####  Medium
+- None found → No acceptance or remediation needed
+
+---
+
+###  Action Taken
+- Since no Critical or High issues were detected, no fixes were required
+- Application already secured with JWT, rate limiting, and input sanitization
+
+---
+
+### Conclusion
+Application successfully passed full OWASP ZAP active scan with zero vulnerabilities.
+All required security controls are effective.
