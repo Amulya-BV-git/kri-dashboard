@@ -1,9 +1,12 @@
+from flask_jwt_extended import JWTManager, create_access_token, jwt_required
 from flask import Flask, request, jsonify
 from sanitizer import sanitize_input
 
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 app = Flask(__name__)
+app.config["JWT_SECRET_KEY"] = "super-secret-key"
+jwt = JWTManager(app)
 @app.route('/')
 def home():
     return "API is running"
@@ -11,6 +14,12 @@ def home():
 @app.route('/health')
 def health():
     return {"status": "ok"}
+
+@app.route('/login', methods=['POST'])
+def login():
+    username = request.json.get("username")
+    access_token = create_access_token(identity=username)
+    return jsonify(access_token=access_token)
 
 limiter = Limiter(
     get_remote_address,
@@ -31,6 +40,7 @@ def test():
     })
 
 @app.route('/generate-report', methods=['POST'])
+@jwt_required()
 @limiter.limit("10 per minute")
 def generate_report():
     data = request.get_json()
