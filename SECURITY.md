@@ -467,7 +467,7 @@ The application is considered secure for its intended use.
 All security requirements have been verified and completed.  
 The project is approved and ready for submission.
 
-##  Day 16: Security Talking Points
+##  Day 16 : Security Talking Points
 
 - JWT Authentication:
   Implemented JWT-based authentication to secure API endpoints. Verified that requests without token are blocked (401 Unauthorized).
