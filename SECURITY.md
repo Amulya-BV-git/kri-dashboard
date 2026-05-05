@@ -480,3 +480,28 @@ The project is approved and ready for submission.
 
 - OWASP ZAP Results:
   Performed baseline and active scans using OWASP ZAP. No Critical or High vulnerabilities were found after fixes.
+
+  ##  Day 17: Individual Practice & Gap Analysis
+
+###  Activity
+- Each team member presented their assigned section individually without using notes
+
+---
+
+###  Gaps Identified
+- Minor hesitation while explaining JWT authentication
+- Needed clearer explanation of rate limiting (429 response)
+- OWASP ZAP explanation improved after revision
+
+---
+
+###  Improvements Made
+- Practiced explanations again
+- Simplified concepts for clarity
+- Improved confidence and delivery
+
+---
+
+###  Conclusion
+All team members are able to confidently present their sections without notes.
+Presentation readiness achieved.
