@@ -506,4 +506,29 @@ The project is approved and ready for submission.
 All team members are able to confidently present their sections without notes.
 Presentation readiness achieved.
 
-Final version submitted.
+### Day 18 : Final version submitted.
+
+##  Day 19: Final Confidence Check
+
+###  Activity
+- Each team member presented their section solo within 90 seconds without notes
+
+---
+
+###  Observations
+- Most members stayed within time limit
+- Minor hesitation in explaining JWT and ZAP concepts
+- Overall clarity improved compared to previous practice
+
+---
+
+###  Final Improvements
+- Refined explanations to fit within 90 seconds
+- Clarified key security concepts
+- Improved confidence and delivery
+
+---
+
+###  Conclusion
+All team members are confident and well-prepared for final presentation.
+No major uncertainties remain.
