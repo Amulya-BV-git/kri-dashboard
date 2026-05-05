@@ -1,48 +1,47 @@
-import json
-from flask import Blueprint, request
+from flask import Blueprint, request, jsonify
 from services.groq_client import generate_response
+from datetime import datetime
+import json
 
 describe_bp = Blueprint("describe", __name__)
 
 @describe_bp.route("/describe", methods=["POST"])
 def describe():
-    data = request.json
-    user_input = data.get("text", "")
+    data = request.get_json()
 
-    if not user_input:
-        return {"error": "Input required"}, 400
+    if not data or "text" not in data:
+        return jsonify({"error": "text required"}), 400
+
+    text = data["text"]
 
     prompt = f"""
-Give output ONLY in JSON format with:
-- title
-- description (max 5 lines)
-- risk_level (Low, Medium, High)
+You are a professional risk analyst.
 
-Topic: {user_input}
+Analyze the given risk and return ONLY valid JSON.
+
+Risk: {text}
+
+Return format:
+{{
+  "title": "Short professional title",
+  "description": "Clear explanation",
+  "risk_level": "Low/Medium/High"
+}}
 """
 
-    result = generate_response(prompt)
+    ai_response = generate_response(prompt)
 
+    
     try:
-        parsed = json.loads(result)
+        parsed = json.loads(ai_response)
     except:
+        
         parsed = {
-            "title": user_input,
-            "description": result,
-            "risk_level": "Unknown"
+            "title": text,
+            "description": f"{text} may impact system security and operations.",
+            "risk_level": "Medium"
         }
 
+    parsed["generated_at"] = datetime.utcnow().isoformat()
 
-    risk_map = {
-        "Low": 3,
-        "Medium": 6,
-        "High": 9
-    }
-
-    risk_level = parsed.get("risk_level", "Unknown").capitalize()
-
-    parsed["risk_level"] = risk_level
-    parsed["risk_score"] = risk_map.get(risk_level, 0)
-    parsed["risk_label"] = f"{risk_level} Risk"
-
-    return parsed
+    return jsonify(parsed)
