@@ -430,3 +430,53 @@ All identified security risks have been mitigated within the project scope.
 No Critical or High vulnerabilities remain after final testing.  
 The application is considered secure for its intended use.
 
+##  Day 15: Final Security Checklist
+
+###  Security Checklist
+
+- [x] All API endpoints tested
+- [x] Input validation and sanitization implemented
+- [x] SQL Injection and Prompt Injection protection verified
+- [x] XSS handling verified
+- [x] JWT authentication implemented and tested
+- [x] Unauthorized access blocked (401)
+- [x] Rate limiting implemented and verified (429)
+- [x] OWASP ZAP baseline and active scans completed
+- [x] All Critical and High vulnerabilities fixed
+- [x] Security headers implemented (Flask-Talisman)
+- [x] PII audit completed (no sensitive data stored/logged)
+- [x] Security documentation completed
+
+---
+
+###  Team Sign-Off
+
+| Name             | Role            | Signature |
+
+|Ujwal Warad       |Java Developer 1 | ✔️        |
+|Varad Vinayak sure|Java Developer2  | ✔️        |
+|Rashi D           |Java Developer 3 | ✔️        |
+|Chaithanya V      |AI Developer 1   | ✔️        |
+|Gunavathi HR      |AI Developer 2   | ✔️        |
+|Amulya BV         |AI Developer 3   | ✔️        |
+|Gagandeep CN      |Sercurity Reviewer|✔️        |
+
+---
+
+###  Final Approval
+All security requirements have been verified and completed.  
+The project is approved and ready for submission.
+
+##  Day 16: Security Talking Points
+
+- JWT Authentication:
+  Implemented JWT-based authentication to secure API endpoints. Verified that requests without token are blocked (401 Unauthorized).
+
+- Rate Limiting:
+  Applied rate limiting using Flask-Limiter to prevent abuse. Confirmed that excessive requests return 429 Too Many Requests.
+
+- Input Sanitisation:
+  Implemented input validation to prevent SQL injection, prompt injection, and XSS attacks. Malicious inputs are safely handled.
+
+- OWASP ZAP Results:
+  Performed baseline and active scans using OWASP ZAP. No Critical or High vulnerabilities were found after fixes.
