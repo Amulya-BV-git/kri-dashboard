@@ -200,7 +200,7 @@ http://127.0.0.1:5000
 
 ---
 
-###  Findings by Severity
+### Day 7: Findings by Severity
 
 #### 🔴 High
 - None
@@ -505,3 +505,4 @@ The project is approved and ready for submission.
 ###  Conclusion
 All team members are able to confidently present their sections without notes.
 Presentation readiness achieved.
+
